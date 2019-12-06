@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance - Student Led CCA</title>
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+    <h1>Steven's Attendance Dashboard
+        <br>
+        <small>Attendance for
+            <strong>
+                <span id="attendance_date"></span>
+            </strong>
+        </small>
+    </h1>
+    <form name="input" action="attendance_store.php" method="post">
+        <table>
+            <tr>
+                <th>Student</th>
+                <th>Tutor</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Steven Chao</td>
+                <td>12S4</td>
+                <td><input type="radio" name="s1_status" value="/">Present</td>
+                <td><input type="radio" name="s1_status" value="=">Unauthorized Absence</td>
+                <td><input type="radio" name="s1_status" value="*">Authorized Absence</td>
+            </tr>
+            <tr>
+                <td>Jeffrey Jin</td>
+                <td>12R4</td>
+                <td><input type="radio" name="s2_status" value="/">Present</td>
+                <td><input type="radio" name="s2_status" value="=">Unauthorized Absence</td>
+                <td><input type="radio" name="s2_status" value="*">Authorized Absence</td>
+            </tr>
+            <tr>
+                <td>Brian Zhang</td>
+                <td>12S2</td>
+                <td><input type="radio" name="s3_status" value="/">Present</td>
+                <td><input type="radio" name="s3_status" value="=">Unauthorized Absence</td>
+                <td><input type="radio" name="s3_status" value="*">Authorized Absence</td>
+            </tr>
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+<script>
+    n =  new Date();
+    y = n.getFullYear();
+    d = n.getDate();
+    weekdays = new Array(7);
+    weekdays[0] = "Sunday";
+    weekdays[1] = "Monday";
+    weekdays[2] = "Tuesday";
+    weekdays[3] = "Wednesday";
+    weekdays[4] = "Thursday";
+    weekdays[5] = "Friday";
+    weekdays[6] = "Saturday";
+    day = weekdays[n.getDay()];
+    month = new Array(12);
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+    m = month[n.getMonth()]
+    document.getElementById("attendance_date").innerHTML = day + ", " + m + " " + d + ", " + y;
+</script>
+</body>
+</html>
