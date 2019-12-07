@@ -11,8 +11,8 @@
 <body>
 <h1>Student Led CCA Attendance System</h1>
 <form name="input" action="html_form_action.php" method="get">
-    username: <input type="text" name="username"><br>
-    password: <input type="password" name="pwd">
+    <label for="username">username:</label> <input id="username" type="text" name="username"><br>
+    <label for="pwd">password: </label><input id="pwd" type="password" name="pwd">
     <input type="submit" value="Submit">
 </form>
 <!--<script>
@@ -21,20 +21,7 @@
 <?php
     echo "Hello World."
 ?>
-<?php
-    $servername = "47.100.93.21:3306";
-    $username = "root@localhost";
-    $password = "chao1lin@mysqlali";
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password);
-
-    // Check for connection
-    if ($conn == connect_error) {
-        echo "Connection failed: " . $conn = connect_error;
-    }
-    echo "Connected";
-?>
 
 </body>
 </html>
